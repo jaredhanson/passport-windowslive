@@ -1,0 +1,16 @@
+{
+  "name": "passport-windowslive",
+  "version": "0.1.0",
+  "description": "Windows Live authentication strategy for Passport.",
+  "author": "Jared Hanson <jaredhanson@gmail.com> (http://www.jaredhanson.net/)",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jaredhanson/passport-windowslive.git"
+  },
+  "main": "./lib/passport-windowslive",
+  "dependencies": {
+    "passport-oauth": ">= 0.1.2"
+  },
+  "engines": { "node": ">= 0.4.0" },
+  "keywords": ["passport", "windowslive", "auth", "authn", "authentication", "identity"]
+}
