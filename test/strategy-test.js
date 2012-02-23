@@ -29,7 +29,7 @@ vows.describe('WindowsLiveStrategy').addBatch({
       function() {});
       
       // mock
-      strategy._oauth2.getProtectedResource = function(url, accessToken, callback) {
+      strategy._oauth2.get = function(url, accessToken, callback) {
         var body = '{ \
            "id": "8c8ce076ca27823f", \
            "name": "Roberto Tamburello", \
@@ -112,6 +112,12 @@ vows.describe('WindowsLiveStrategy').addBatch({
         assert.equal(profile.name.familyName, 'Tamburello');
         assert.equal(profile.name.givenName, 'Roberto');
       },
+      'should set raw property' : function(err, profile) {
+        assert.isString(profile._raw);
+      },
+      'should set json property' : function(err, profile) {
+        assert.isObject(profile._json);
+      },
     },
   },
   
@@ -124,7 +130,7 @@ vows.describe('WindowsLiveStrategy').addBatch({
       function() {});
       
       // mock
-      strategy._oauth2.getProtectedResource = function(url, accessToken, callback) {
+      strategy._oauth2.get = function(url, accessToken, callback) {
         callback(new Error('something-went-wrong'));
       }
       
