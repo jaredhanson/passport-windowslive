@@ -38,6 +38,8 @@ application:
 
     app.get('/auth/windowslive',
       passport.authenticate('windowslive'),
+      // http://msdn.microsoft.com/en-us/library/live/hh243646.aspx
+      { scope: ['wl.signin', 'wl.basic'] },
       function(req, res){
         // The request will be redirected to Windows Live for authentication, so
         // this function will not be called.
