@@ -3,7 +3,13 @@
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with [Windows Live](http://www.live.com/) using the OAuth 2.0 API.
 
-## Installation
+This module lets you authenticate using Windows Live in your Node.js applications.
+By plugging into Passport, Windows Live authentication can be easily and
+unobtrusively integrated into any application or framework that supports
+[Connect](http://www.senchalabs.org/connect/)-style middleware, including
+[Express](http://expressjs.com/).
+
+## Install
 
     $ npm install passport-windowslive
 
@@ -37,13 +43,7 @@ For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
     app.get('/auth/windowslive',
-      passport.authenticate('windowslive'),
-      // http://msdn.microsoft.com/en-us/library/live/hh243646.aspx
-      { scope: ['wl.signin', 'wl.basic'] },
-      function(req, res){
-        // The request will be redirected to Windows Live for authentication, so
-        // this function will not be called.
-      });
+      passport.authenticate('windowslive', { scope: ['wl.signin', 'wl.basic'] }));
 
     app.get('/auth/windowslive/callback', 
       passport.authenticate('windowslive', { failureRedirect: '/login' }),
@@ -69,23 +69,6 @@ For a complete, working example, refer to the [login example](https://github.com
 
 ## License
 
-(The MIT License)
+[The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011 Jared Hanson
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2011-2013 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
