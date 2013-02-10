@@ -1,7 +1,8 @@
 # Passport-Windows Live
 
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
-with [Windows Live](http://www.live.com/) using the OAuth 2.0 API.
+with [Microsoft](http://www.microsoft.com/) accounts (aka [Windows Live](http://www.live.com/))
+using the OAuth 2.0 API.
 
 This module lets you authenticate using Windows Live in your Node.js applications.
 By plugging into Passport, Windows Live authentication can be easily and

@@ -2,7 +2,7 @@
   "name": "passport-windowslive",
   "version": "0.1.1",
   "description": "Windows Live authentication strategy for Passport.",
-  "keywords": ["passport", "windowslive", "auth", "authn", "authentication", "identity"],
+  "keywords": ["passport", "microsoft", "windowslive", "msn", "hotmail", "auth", "authn", "authentication", "identity"],
   "repository": {
     "type": "git",
     "url": "git://github.com/jaredhanson/passport-windowslive.git"
