@@ -111,6 +111,8 @@ vows.describe('WindowsLiveStrategy').addBatch({
         assert.equal(profile.displayName, 'Roberto Tamburello');
         assert.equal(profile.name.familyName, 'Tamburello');
         assert.equal(profile.name.givenName, 'Roberto');
+        assert.lengthOf(profile.photos, 1);
+        assert.equal(profile.photos[0].value, 'https://apis.live.net/v5.0/8c8ce076ca27823f/picture');
       },
       'should set raw property' : function(err, profile) {
         assert.isString(profile._raw);
