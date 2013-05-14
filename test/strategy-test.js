@@ -111,6 +111,21 @@ vows.describe('WindowsLiveStrategy').addBatch({
         assert.equal(profile.displayName, 'Roberto Tamburello');
         assert.equal(profile.name.familyName, 'Tamburello');
         assert.equal(profile.name.givenName, 'Roberto');
+        
+        assert.lengthOf(profile.emails, 4);
+        assert.equal(profile.emails[0].value, 'Roberto@contoso.com');
+        assert.equal(profile.emails[0].type, 'account');
+        assert.isTrue(profile.emails[0].primary);
+        assert.equal(profile.emails[1].value, 'Roberto@fabrikam.com');
+        assert.equal(profile.emails[1].type, 'home');
+        assert.isUndefined(profile.emails[1].primary);
+        assert.equal(profile.emails[2].value, 'Robert@adatum.com');
+        assert.equal(profile.emails[2].type, 'work');
+        assert.isUndefined(profile.emails[2].primary);
+        assert.equal(profile.emails[3].value, 'Roberto@adventure-works.com');
+        assert.equal(profile.emails[3].type, 'other');
+        assert.isUndefined(profile.emails[3].primary);
+        
         assert.lengthOf(profile.photos, 1);
         assert.equal(profile.photos[0].value, 'https://apis.live.net/v5.0/8c8ce076ca27823f/picture');
       },
