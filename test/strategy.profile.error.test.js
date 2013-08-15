@@ -42,7 +42,7 @@ describe('Strategy#userProfile', function() {
     });
   });
   
-  describe.only('handling malformed responses', function() {
+  describe('handling malformed responses', function() {
     var strategy =  new WindowsLiveStrategy({
         clientID: 'ABC123',
         clientSecret: 'secret'
