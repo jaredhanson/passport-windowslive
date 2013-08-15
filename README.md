@@ -1,5 +1,10 @@
 # Passport-Windows Live
 
+[![Build](https://travis-ci.org/jaredhanson/passport-windowslive.png)](http://travis-ci.org/jaredhanson/passport-windowslive)
+[![Coverage](https://coveralls.io/repos/jaredhanson/passport-windowslive/badge.png)](https://coveralls.io/r/jaredhanson/passport-windowslive)
+[![Dependencies](https://david-dm.org/jaredhanson/passport-windowslive.png)](http://david-dm.org/jaredhanson/passport-windowslive)
+
+
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with [Microsoft](http://www.microsoft.com/) accounts (aka [Windows Live](http://www.live.com/))
 using the OAuth 2.0 API.
@@ -59,10 +64,8 @@ For a complete, working example, refer to the [login example](https://github.com
 
 ## Tests
 
-    $ npm install --dev
-    $ make test
-
-[![Build Status](https://secure.travis-ci.org/jaredhanson/passport-windowslive.png)](http://travis-ci.org/jaredhanson/passport-windowslive)
+    $ npm install
+    $ npm test
 
 ## Credits
 
