@@ -7,9 +7,6 @@ var windowslive = require('..');
 vows.describe('passport-windowslive').addBatch({
   
   'module': {
-    'should report a version': function (x) {
-      assert.isString(windowslive.version);
-    },
   },
   
 }).export(module);
