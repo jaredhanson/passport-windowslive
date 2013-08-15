@@ -128,6 +128,7 @@ describe('Strategy#userProfile', function() {
     it('should error', function() {
       expect(err).to.be.an.instanceOf(Error);
       expect(err.constructor.name).to.equal('InternalOAuthError');
+      expect(err.message).to.equal('Failed to fetch user profile');
     });
     
     it('should not load profile', function() {
