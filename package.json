@@ -1,6 +1,6 @@
 {
   "name": "passport-windowslive",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "Windows Live authentication strategy for Passport.",
   "keywords": [
     "passport",
