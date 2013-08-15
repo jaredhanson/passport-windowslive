@@ -4,7 +4,7 @@ var fs = require('fs')
 
 describe('profile.parse', function() {
     
-  describe.only('example profile', function() {
+  describe('example profile', function() {
     var profile;
     
     before(function(done) {
