@@ -1,4 +1,4 @@
-# Passport-Windows Live
+# passport-windowslive
 
 [![Build](https://travis-ci.org/jaredhanson/passport-windowslive.png)](http://travis-ci.org/jaredhanson/passport-windowslive)
 [![Coverage](https://coveralls.io/repos/jaredhanson/passport-windowslive/badge.png)](https://coveralls.io/r/jaredhanson/passport-windowslive)
