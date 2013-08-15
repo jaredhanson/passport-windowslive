@@ -1,7 +1,7 @@
 var vows = require('vows');
 var assert = require('assert');
 var util = require('util');
-var WindowsLiveStrategy = require('../lib/passport-windowslive/strategy');
+var WindowsLiveStrategy = require('../lib/strategy');
 
 
 vows.describe('WindowsLiveStrategy').addBatch({
