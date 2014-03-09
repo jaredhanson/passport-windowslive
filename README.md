@@ -1,9 +1,10 @@
 # passport-windowslive
 
-[![Build](https://travis-ci.org/jaredhanson/passport-windowslive.png)](http://travis-ci.org/jaredhanson/passport-windowslive)
+[![Build](https://travis-ci.org/jaredhanson/passport-windowslive.png)](https://travis-ci.org/jaredhanson/passport-windowslive)
 [![Coverage](https://coveralls.io/repos/jaredhanson/passport-windowslive/badge.png)](https://coveralls.io/r/jaredhanson/passport-windowslive)
-[![Dependencies](https://david-dm.org/jaredhanson/passport-windowslive.png)](http://david-dm.org/jaredhanson/passport-windowslive)
-
+[![Quality](https://codeclimate.com/github/jaredhanson/passport-windowslive.png)](https://codeclimate.com/github/jaredhanson/passport-windowslive)
+[![Dependencies](https://david-dm.org/jaredhanson/passport-windowslive.png)](https://david-dm.org/jaredhanson/passport-windowslive)
+[![Tips](http://img.shields.io/gittip/jaredhanson.png)](https://www.gittip.com/jaredhanson/)
 
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
 with [Microsoft](http://www.microsoft.com/) accounts (aka [Windows Live](http://www.live.com/))
@@ -75,4 +76,4 @@ For a complete, working example, refer to the [login example](https://github.com
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011-2013 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2011-2014 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
