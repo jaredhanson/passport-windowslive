@@ -1,3 +1,6 @@
+/* global describe, it, expect */
+/* jshint expr: true */
+
 var WindowsLiveStrategy = require('../lib/strategy');
 
 

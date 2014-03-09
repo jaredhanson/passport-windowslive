@@ -1,3 +1,6 @@
+/* global describe, it, expect, before */
+/* jshint expr: true, multistr: true */
+
 var WindowsLiveStrategy = require('../lib/strategy');
 
 
@@ -10,20 +13,20 @@ describe('Strategy#userProfile', function() {
       },
       function() {});
   
-      // mock
-      strategy._oauth2.get = function(url, accessToken, callback) {
-        if (url != 'https://apis.live.net/v5.0/me') { return callback(new Error('wrong url argument')); }
-        if (accessToken != 'token') { return callback(new Error('wrong token argument')); }
-      
-        var body = '{ \
-             "error": { \
-                "code": "request_token_expired", \
-                "message": "The provided access token has expired." \
-             } \
-          }';
+    // mock
+    strategy._oauth2.get = function(url, accessToken, callback) {
+      if (url != 'https://apis.live.net/v5.0/me') { return callback(new Error('wrong url argument')); }
+      if (accessToken != 'token') { return callback(new Error('wrong token argument')); }
     
-        callback({ statusCode: 401, data: body });
-      }
+      var body = '{ \
+           "error": { \
+              "code": "request_token_expired", \
+              "message": "The provided access token has expired." \
+           } \
+        }';
+  
+      callback({ statusCode: 401, data: body });
+    };
       
     var err, profile;
     before(function(done) {
@@ -49,14 +52,14 @@ describe('Strategy#userProfile', function() {
       },
       function() {});
   
-      // mock
-      strategy._oauth2.get = function(url, accessToken, callback) {
-        if (url != 'https://apis.live.net/v5.0/me') { return callback(new Error('wrong url argument')); }
-        if (accessToken != 'token') { return callback(new Error('wrong token argument')); }
-      
-        var body = 'Hello, world.';
-        callback(null, body, undefined);
-      }
+    // mock
+    strategy._oauth2.get = function(url, accessToken, callback) {
+      if (url != 'https://apis.live.net/v5.0/me') { return callback(new Error('wrong url argument')); }
+      if (accessToken != 'token') { return callback(new Error('wrong token argument')); }
+    
+      var body = 'Hello, world.';
+      callback(null, body, undefined);
+    };
       
     var err, profile;
     before(function(done) {
