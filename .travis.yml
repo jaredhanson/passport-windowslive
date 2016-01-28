@@ -13,6 +13,7 @@ node_js:
 
 
 before_install:
+  - '[ "${TRAVIS_NODE_VERSION}" = "0.4" ] && echo "ON NODE 0.4"'
   - "npm install make-node@0.3.x -g"
   - "preinstall-compat"
 
