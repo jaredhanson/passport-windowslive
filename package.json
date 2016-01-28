@@ -38,8 +38,8 @@
     "passport-oauth2": "1.x.x"
   },
   "devDependencies": {
-    "mocha": "2.x.x",
-    "chai": "3.x.x",
+    "mocha": "1.x.x",
+    "chai": "2.x.x",
     "make-node": "0.3.x"
   },
   "engines": {
