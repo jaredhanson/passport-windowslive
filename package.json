@@ -40,7 +40,7 @@
   "devDependencies": {
     "mocha": "1.x.x",
     "chai": "1.x.x",
-    "@jaredhanson/make-node": "0.2.x"
+    "make-node": "0.3.x"
   },
   "engines": {
     "node": ">= 0.4.0"

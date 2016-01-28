@@ -1,4 +1,4 @@
-include node_modules/@jaredhanson/make-node/main.mk
+include node_modules/make-node/main.mk
 
 
 SOURCES = lib/*.js lib/**/*.js
