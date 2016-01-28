@@ -13,8 +13,8 @@ node_js:
 
 
 before_install:
-  - "npm install istanbul@0.4.x -g"
-  - "npm install coveralls@2.x.x -g"
+  - "npm install make-node@0.3.x -g"
+  - "preinstall-compat"
 
 script:
   - "make test-cov"
