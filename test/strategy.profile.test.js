@@ -1,4 +1,4 @@
-/* global describe, it, expect, before */
+/* global describe, it, before, expect */
 /* jshint expr: true, multistr: true */
 
 var WindowsLiveStrategy = require('../lib/strategy');
