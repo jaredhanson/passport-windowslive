@@ -1,19 +1,19 @@
-/* global describe, it, expect, before */
+/* global describe, it, before, expect */
 /* jshint expr: true */
 
-var fs = require('fs')
-  , parse = require('../lib/profile').parse;
+var Profile = require('../lib/profile')
+  , fs = require('fs')
 
 
-describe('profile.parse', function() {
+describe('Profile.parse', function() {
     
-  describe('example profile', function() {
+  describe('profile obtained from unknown source on unknown date', function() {
     var profile;
     
     before(function(done) {
-      fs.readFile('test/data/example.json', 'utf8', function(err, data) {
+      fs.readFile('test/fixtures/roberto-tamburello.json', 'utf8', function(err, data) {
         if (err) { return done(err); }
-        profile = parse(data);
+        profile = Profile.parse(data);
         done();
       });
     });
