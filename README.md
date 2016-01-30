@@ -11,11 +11,11 @@
 with [Microsoft](http://www.microsoft.com/) accounts (aka [Windows Live](http://www.live.com/))
 using the OAuth 2.0 API.
 
-This module lets you authenticate using Windows Live in your Node.js applications.
-By plugging into Passport, Windows Live authentication can be easily and
-unobtrusively integrated into any application or framework that supports
-[Connect](http://www.senchalabs.org/connect/)-style middleware, including
-[Express](http://expressjs.com/).
+This module lets you authenticate using Windows Live in your Node.js
+applications.  By plugging into Passport, Windows Live authentication can be
+easily and unobtrusively integrated into any application or framework that
+supports [Connect](http://www.senchalabs.org/connect/)-style middleware,
+including [Express](http://expressjs.com/).
 
 ## Install
 
@@ -26,18 +26,21 @@ unobtrusively integrated into any application or framework that supports
 #### Configure Strategy
 
 The Windows Live authentication strategy authenticates users using a Windows
-Live account and OAuth 2.0 tokens.  The strategy requires a `verify` callback,
-which accepts these credentials and calls `done` providing a user, as well as
-`options` specifying a client ID, client secret, and callback URL.
+Live account and OAuth 2.0 tokens.  The client ID and secret obtained when
+creating an application are supplied as options when creating the strategy.  The
+strategy also requires a `verify` callback, which receives the access token and
+optional refresh token, as well as `profile` which contains the authenticated
+user's Windows Live profile.  The `verify` callback must call `cb` providing a
+user to complete authentication.
 
     passport.use(new WindowsLiveStrategy({
         clientID: WINDOWS_LIVE_CLIENT_ID,
         clientSecret: WINDOWS_LIVE_CLIENT_SECRET,
         callbackURL: "http://www.example.com/auth/windowslive/callback"
       },
-      function(accessToken, refreshToken, profile, done) {
+      function(accessToken, refreshToken, profile, cb) {
         User.findOrCreate({ windowsliveId: profile.id }, function (err, user) {
-          return done(err, user);
+          return cb(err, user);
         });
       }
     ));
@@ -62,19 +65,51 @@ application:
 
 ## Examples
 
-For a complete, working example, refer to the [login example](https://github.com/jaredhanson/passport-windowslive/tree/master/examples/login).
+Developers using the popular [Express](http://expressjs.com/) web framework can
+refer to an [example](https://github.com/passport/express-4.x-facebook-example)
+as a starting point for their own web applications.  The example shows how to
+authenticate users using Facebook.  However, because both Facebook and Windows
+Live use OAuth 2.0, the code is similar.  Simply replace references to Facebook
+with corresponding references to Windows Live.
 
-## Tests
+## Contributing
 
-    $ npm install
-    $ npm test
+#### Tests
 
-## Credits
+The test suite is located in the `test/` directory.  All new features are
+expected to have corresponding test cases.  Ensure that the complete test suite
+passes by executing:
 
-  - [Jared Hanson](http://github.com/jaredhanson)
+```bash
+$ make test
+```
+
+#### Coverage
+
+All new feature development is expected to have test coverage.  Patches that
+increse test coverage are happily accepted.  Coverage reports can be viewed by
+executing:
+
+```bash
+$ make test-cov
+$ make view-cov
+```
+
+## Support
+
+#### Funding
+
+This software is provided to you as open source, free of charge.  The time and
+effort to develop and maintain this project is dedicated by [@jaredhanson](https://github.com/jaredhanson).
+If you (or your employer) benefit from this project, please consider a financial
+contribution.  Your contribution helps continue the efforts that produce this
+and other open source software.
+
+Funds are accepted via [PayPal](https://paypal.me/jaredhanson), [Venmo](https://venmo.com/jaredhanson),
+and [other](http://jaredhanson.net/pay) methods.  Any amount is appreciated.
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011-2014 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2011-2016 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
