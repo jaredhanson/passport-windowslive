@@ -23,6 +23,15 @@ including [Express](http://expressjs.com/).
 
 ## Usage
 
+#### Create an Application
+
+Before using `passport-windowslive`, you must register an application with
+Microsoft.  If you have not already done so, a new application can be created at
+[Live Connect app management](https://account.live.com/developers/applications/index).
+Your application will be issued a client ID and client secret, which need to be
+provided to the strategy.  You will also need to configure a redirect URL which
+matches the route in your application.
+
 #### Configure Strategy
 
 The Windows Live authentication strategy authenticates users using a Windows
