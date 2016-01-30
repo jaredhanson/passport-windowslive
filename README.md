@@ -86,7 +86,7 @@ with corresponding references to Windows Live.
 ##### How do I obtain a refresh token?
 
 Your authentication request must include `wl.offline_access` as detailed in
-[scopes and permissions](https://msdn.microsoft.com/en-us/library/hh243646.aspx)
+[scopes and permissions](https://msdn.microsoft.com/en-us/library/hh243646.aspx).
 
 ```js
 passport.authenticate('windowslive', { scope: [ 'wl.offline_access' ] })
