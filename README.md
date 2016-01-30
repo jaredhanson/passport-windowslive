@@ -81,6 +81,17 @@ authenticate users using Facebook.  However, because both Facebook and Windows
 Live use OAuth 2.0, the code is similar.  Simply replace references to Facebook
 with corresponding references to Windows Live.
 
+## FAQ
+
+##### How do I obtain a refresh token?
+
+Your authentication request must include `wl.offline_access` as detailed in
+[scopes and permissions](https://msdn.microsoft.com/en-us/library/hh243646.aspx)
+
+```js
+passport.authenticate('windowslive', { scope: [ 'wl.offline_access' ] })
+```
+
 ## Contributing
 
 #### Tests
