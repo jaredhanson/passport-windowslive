@@ -30,7 +30,9 @@ describe('Strategy', function() {
   describe('authorization request with parameters', function() {
     var strategy = new WindowsLiveStrategy({
         clientID: 'ABC123',
-        clientSecret: 'secret'
+        clientSecret: 'secret',
+        response_type: 'code',
+        callbackURL: 'http://mockuri.com'
       }, function() {});
     
     
@@ -45,11 +47,11 @@ describe('Strategy', function() {
         .req(function(req) {
           req.session = {};
         })
-        .authenticate({ locale: 'fr-CA', display: 'popup', ignore: 'this' });
+        .authenticate({ prompt: 'select_account', login_hint: 'abc@mockdomain.com', locale: 'fr-CA', display: 'popup', ignore: 'this' });
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://login.live.com/oauth20_authorize.srf?locale=fr-CA&display=popup&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://login.live.com/oauth20_authorize.srf?locale=fr-CA&display=popup&prompt=select_account&login_hint=abc%40mockdomain.com&response_type=code&redirect_uri=http%3A%2F%2Fmockuri.com&client_id=ABC123');
     });
   });
   
